@@ -24,11 +24,27 @@ const productos = [
     nombre: "Traje de Baño Estampado",
     precio: 29.99,
     tallas: ['S', 'M', 'L'],
-    imagen: "img/trajebano1.jpg",
+    imagen: "img/trajedebano1.jpg",
     categoria: "trajebano",
     descripcion: "Traje de baño de una pieza con estampado floral en colores vibrantes"
+  },
+  {
+    nombre: "Traje de Baño Clásico",
+    precio: 34.99,
+    tallas: ['S', 'M', 'L'],
+    imagen: "img/trajedebano2.jpg",
+    categoria: "trajebano",
+    descripcion: "Traje de baño clásico en color sólido"
+  },
+  {
+    nombre: "Traje de Baño con Rayas",
+    precio: 39.99,
+    tallas: ['S', 'M', 'L'],
+    imagen: "img/trajedebano3.jpg",
+    categoria: "trajebano",
+    descripcion: "Traje de baño con rayas horizontales"
   }
-  // Agrega aquí los otros 104 productos con precios y tallas diferentes...
+  // Agrega más productos según sea necesario...
 ];
 
 export default productos;
