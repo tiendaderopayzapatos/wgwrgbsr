@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #d5006d; /* Color de encabezado */
+    background-color: #ff69b4; /* Color de encabezado rosado */
     color: white;
     padding: 20px;
     text-align: center;
@@ -28,16 +28,14 @@ nav a:hover {
     margin: 10px;
     background-color: white;
     transition: transform 0.2s;
-    width: 150px; /* Tamaño más pequeño */
-    height: auto; /* Ajustar automáticamente la altura */
 }
 
 .producto:hover {
-    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+    transform: scale(1.05);
 }
 
 button {
-    background-color: #d5006d; /* Color de botones */
+    background-color: #ff69b4; /* Color de botones rosado */
     color: white;
     border: none;
     padding: 10px;
@@ -46,7 +44,7 @@ button {
 }
 
 button:hover {
-    background-color: #a4004f; /* Color de botones al pasar el mouse */
+    background-color: #ff1493; /* Color de botones al pasar el mouse rosado más oscuro */
 }
 
 .resumen {
