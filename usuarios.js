@@ -36,3 +36,27 @@ if (formLogin) {
     }
   });
 }
+
+// Cerrar sesión
+const cerrarSesion = document.getElementById('cerrar-sesion');
+if (cerrarSesion) {
+  cerrarSesion.addEventListener('click', function() {
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('contrasena');
+    alert('✅ Sesión cerrada');
+    window.location.reload(); // Recargar la página para actualizar el estado
+  });
+}
+
+// Mostrar nombre de usuario y opción de cerrar sesión
+function mostrarUsuario() {
+  const usuario = localStorage.getItem('usuario');
+  if (usuario) {
+    document.getElementById('nombre-usuario').textContent = `Hola, ${usuario}`;
+    document.getElementById('cerrar-sesion').style.display = 'inline'; // Mostrar el enlace de cerrar sesión
+    document.querySelector('nav a[href="login.html"]').style.display = 'none';
+    document.querySelector('nav a[href="registro.html"]').style.display = 'none';
+  }  
+}
+
+mostrarUsuario();
