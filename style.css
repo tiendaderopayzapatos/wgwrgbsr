@@ -28,12 +28,11 @@ nav a:hover {
     margin: 10px;
     background-color: white;
     transition: transform 0.2s;
-    width: 200px; /* Ajusta el ancho según sea necesario */
-    height: 300px; /* Ajusta la altura según sea necesario */
+    /* Elimina el tamaño fijo para que se ajuste automáticamente */
 }
 
 .producto:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
 }
 
 button {
