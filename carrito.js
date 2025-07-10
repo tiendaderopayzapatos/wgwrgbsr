@@ -42,6 +42,7 @@ function mostrarResumen() {
     <p>Total: $${total.toFixed(2)}</p>
     <button onclick="vaciarCarrito()">Vaciar Carrito</button>
   `;
+  document.getElementById('resumen-carrito').innerHTML = ''; // Limpiar antes de agregar
   document.getElementById('resumen-carrito').appendChild(resumen);
 }
 
