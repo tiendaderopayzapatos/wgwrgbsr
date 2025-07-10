@@ -40,8 +40,7 @@ if (formLogin) {
 // Cerrar sesión
 const cerrarSesion = document.getElementById('cerrar-sesion');
 if (cerrarSesion) {
-  cerrarSesion.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+  cerrarSesion.addEventListener('click', function() {
     localStorage.removeItem('usuario');
     localStorage.removeItem('contrasena');
     alert('✅ Sesión cerrada');
@@ -54,11 +53,11 @@ function mostrarUsuario() {
   const usuario = localStorage.getItem('usuario');
   if (usuario) {
     document.getElementById('nombre-usuario').textContent = `Hola, ${usuario}`;
-    document.getElementById('cerrar-sesion').style.display = 'inline'; // Mostrar el enlace de cerrar sesión
+    document.getElementById('cerrar-sesion').style.display = 'inline'; // Mostrar el botón de cerrar sesión
     document.querySelector('nav a[href="login.html"]').style.display = 'none';
     document.querySelector('nav a[href="registro.html"]').style.display = 'none';
   } else {
-    document.getElementById('cerrar-sesion').style.display = 'none'; // Ocultar el enlace si no hay usuario
+    document.getElementById('cerrar-sesion').style.display = 'none'; // Ocultar el botón si no hay usuario
   }
 }
 
