@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #ff69b4; /* Color de encabezado rosado */
+    background-color: #d5006d; /* Color de encabezado */
     color: white;
     padding: 20px;
     text-align: center;
@@ -21,6 +21,12 @@ nav a:hover {
     text-decoration: underline;
 }
 
+#contenedor-productos {
+    display: flex; /* Usar flexbox para alinear los productos */
+    flex-wrap: wrap; /* Permitir que los productos se envuelvan en varias filas */
+    justify-content: center; /* Centrar los productos */
+}
+
 .producto {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -28,14 +34,24 @@ nav a:hover {
     margin: 10px;
     background-color: white;
     transition: transform 0.2s;
+    width: 150px; /* Ancho fijo para los productos */
+    height: auto; /* Ajustar automáticamente la altura */
+    display: flex; /* Usar flexbox para el contenido del producto */
+    flex-direction: column; /* Colocar el contenido en columna */
+    align-items: center; /* Centrar el contenido */
+}
+
+.producto img {
+    width: 100%; /* Ajustar la imagen al ancho del contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
 }
 
 .producto:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
 }
 
 button {
-    background-color: #ff69b4; /* Color de botones rosado */
+    background-color: #d5006d; /* Color de botones */
     color: white;
     border: none;
     padding: 10px;
@@ -44,7 +60,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff1493; /* Color de botones al pasar el mouse rosado más oscuro */
+    background-color: #a4004f; /* Color de botones al pasar el mouse */
 }
 
 .resumen {
