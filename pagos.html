@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago - Moda Urbana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Finalizar Compra</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="carrito.html">Volver al carrito</a>
+      <span id="nombre-usuario"></span>
+    </nav>
+  </header>
+
+  <section class="formulario">
+    <form id="form-pago">
+      <h3>Información de Envío</h3>
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" required>
+      
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" required>
+      
+      <label for="envio">Método de envío:</label>
+      <select id="envio" required>
+        <option value="">Seleccionar</option>
+        <option value="estandar">Envío estándar ($5.99)</option>
+        <option value="express">Envío express ($9.99)</option>
+      </select>
+
+      <h3>Información de Pago</h3>
+      <label for="tarjeta">Número de tarjeta:</label>
+      <input type="text" id="tarjeta" pattern="[0-9]{16}" maxlength="16" required>
+
+      <label for="nombre">Nombre en la tarjeta:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="vencimiento">Fecha de vencimiento (MM/AA):</label>
+      <input type="text" id="vencimiento" pattern="\d{2}/\d{2}" placeholder="MM/AA" required>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" pattern="[0-9]{3}" maxlength="3" required>
+
+      <button type="submit">Confirmar Pago</button>
+    </form>
+    <div id="mensaje-pago"></div>
+  </section>
+
+  <script>
+    document.getElementById('form-pago').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Validar tarjeta
+      const tarjeta = document.getElementById('tarjeta').value;
+      if (tarjeta.length !== 16 || isNaN(tarjeta)) {
+        document.getElementById('mensaje-pago').textContent = 'Número de tarjeta inválido';
+        document.getElementById('mensaje-pago').style.color = 'red';
+        return;
+      }
+
+      // Simular pago exitoso
+      document.getElementById('mensaje-pago').textContent = '✅ Pago exitoso. ¡Gracias por tu compra!';
+      document.getElementById('mensaje-pago').style.color = 'green';
+      localStorage.removeItem('carrito'); // Vaciar carrito después de pagar
+    });
+
+    // Mostrar nombre de usuario
+    const usuario = localStorage.getItem('usuario');
+    if (usuario) {
+      document.getElementById('nombre-usuario').textContent = `Hola, ${usuario}`;
+    }
+  </script>
+</body>
+</html>
